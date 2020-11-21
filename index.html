@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Cookie</title>
+</head>
+<body>
+<h1>Hello Cookie</h1>
+
+<p>You are not able to create cookies with name 'foo', 'bar' or 'baz'.</p>
+
+<fieldset>
+    <p id="c_message">Please create a cookie</p>
+    <div>
+        <label for="c_name">cookie name</label>
+        <input type="text" name="c_name" id="c_name">
+    </div>
+    <div>
+        <label for="c_value">cookie value</label>
+        <input type="text" name="c_value" id="c_value">
+    </div>
+    <input type="button" value="set cookie" id="set_cookie">
+</fieldset>
+
+<p id="c_current"></p>
+
+<script>
+    document.cookies_to_block = ['foo','bar','baz']
+</script>
+
+<script>
+    document.getElementById('set_cookie').onclick = function () {
+        setCookie(
+            document.getElementById('c_name').value,
+            document.getElementById('c_value').value,
+            7
+        )
+    };
+</script>
+
+
+<script src="cookie.js"></script>
+<script src="cookie_blocker.js"></script>
+</body>
+</html>
