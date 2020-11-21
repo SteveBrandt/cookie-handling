@@ -1,2 +1,2 @@
 # cookie-handling
-Block defined cookies
+An example to block cookie creation
